@@ -1,15 +1,25 @@
 import React from 'react';
-// import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 
 
 import './App.css';
+import Header from './components/header';
+import HomePage from './pages/home';
+import LandingPage from './pages/landing';
 // import HomePage from './pages/home';
 // import LandingPage from './pages/landing';
 import WeatherPage from './pages/weather';
 
 function App() {
   return (
-    <WeatherPage />
+      <>
+        <Header />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="home" element={<HomePage />} />
+          <Route path="weather" element={<WeatherPage />} />
+        </Routes>
+      </>
   );
 }
 
