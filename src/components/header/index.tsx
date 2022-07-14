@@ -1,5 +1,5 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import { FunctionComponent } from "react";
-import { Link } from "react-router-dom";
 
 import logo from '../../logo.svg';
 
@@ -7,8 +7,14 @@ import logo from '../../logo.svg';
 interface HeaderProps {
     
 }
+
+const loginRoute = process.env.REACT_APP_URL;
  
 const Header: FunctionComponent<HeaderProps> = () => {
+    const { logout } = useAuth0<{
+        name: string;
+      }>();
+
     return ( 
         <header className="d-flex align-items-center justify-content-between">
             <div className="d-flex align-items-center">
@@ -16,7 +22,7 @@ const Header: FunctionComponent<HeaderProps> = () => {
                 <h1 className="m-0">Weather Forecast</h1>
             </div>
             <div className="p-4">
-                <Link to="/"><button className="btn btn-secondary">Logout</button></Link>
+                <button className="btn btn-secondary" onClick={() => logout({ returnTo: loginRoute })}>Logout</button>
             </div>
         </header>
      );
