@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import { Link } from "react-router-dom";
 
 import logo from '../../logo.svg';
 
@@ -15,7 +16,7 @@ const Header: FunctionComponent<HeaderProps> = () => {
                 <h1 className="m-0">Weather Forecast</h1>
             </div>
             <div className="p-4">
-                <button>Logout</button>
+                <Link to="/"><button className="btn btn-secondary">Logout</button></Link>
             </div>
         </header>
      );

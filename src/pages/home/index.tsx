@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import { Link } from "react-router-dom";
 
 interface HomePageProps {
     
@@ -10,10 +11,10 @@ const HomePage: FunctionComponent<HomePageProps> = () => {
             <p>John Smith</p>
             <p>https://github.com/smithjohn</p>
             <div className="input-group my-3">
-                <span className="input-group-text" id="basic-addon1">@</span>
-                <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
+                <span className="input-group-text" id="search_city">@</span>
+                <input type="text" className="form-control" placeholder="City" aria-label="City" aria-describedby="search-search_city" />
             </div>
-            <button>Display Weather</button>
+            <Link to="/weather"><button className="btn btn-primary">Display Weather</button></Link>
         </div>
      );
 }

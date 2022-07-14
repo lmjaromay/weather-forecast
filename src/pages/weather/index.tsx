@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+import { Link } from 'react-router-dom';
 
 interface WeatherPageProps {
     
@@ -29,6 +30,10 @@ const WeatherPage: FunctionComponent<WeatherPageProps> = () => {
                     </tr>
                 </tbody>
             </table>
+            <div className="d-flex justify-content-end">
+                <Link to="/home"><button className="btn btn-secondary ml-auto">Back</button></Link>
+                
+            </div>
         </div>
      );
 }
